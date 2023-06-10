@@ -1,0 +1,107 @@
+@import url('/src/Normalize.scss');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(90deg, #21a9c1,#21a9c1,#c1bdda);
+  font-family: 'Roboto', sans-serif;
+  #root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .card {
+    background-color: white;
+    width: 350px;
+    border-radius: 5px;
+    padding: 20px;
+    & .todoApp{
+      font-weight: 700;
+      font-size: 30px;
+      padding-bottom: 20px;
+    }
+  }
+  .addInput{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    height: 40px;
+    & .input {
+      width: 300px;
+      padding-left: 10px;
+      border: 1px solid gray; 
+    }
+    & .addButton {
+      background-color:#8d4ae5 ;
+      border: none;
+      color: white;
+      width: 50px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+        height:20px;
+        width: 20px;
+      }
+    }
+  }
+  .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    & .text {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: 0;
+      height: 30px;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 18px;
+      background-color: #f0f0f0;
+    }
+  }
+  .footerCard {
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & button {
+      background-color:#8d4ae5 ;
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 20px
+    } 
+  }
+}
+
+.delete {
+  display: none;
+}
+
+
+.todo {
+  display: flex;
+  &:hover {
+    .delete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e84c3d;
+      width: 60px;
+      border: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      img {
+        height: 20px;
+        width: 20px
+      }
+    }
+  }
+}
+.lineThrough {
+  text-decoration: line-through;
+}
