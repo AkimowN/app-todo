@@ -44,23 +44,27 @@
 // }
 
 // export default App
-import {Todo} from './Components/todo'
+import {Todo} from './Components/Todo'
 import './App.scss'
 import PlusIcon from './img/plusIcon.png'
 import {useState, useEffect} from 'react'
+
+const initTexts = (): string[] => {
+  const raw = localStorage.getItem('texts')
+  if (raw !== null) {
+    return JSON.parse(raw)
+  }
+  return []
+}
+
 function App() {
-  const [texts, setTexts] = useState<string[]>([])
+  const [texts, setTexts] = useState<string[]>(initTexts)
   const [input, setInput] = useState('') 
-  useEffect(()=>{
-    const raw = localStorage.getItem('texts')
-    console.log(raw)
-    if (raw !== null) {
-      setTexts(JSON.parse(raw))
-    }
-  },[])
+  
   useEffect(()=>{
     localStorage.setItem('texts',JSON.stringify(texts))
   },[texts]) 
+
   const addItem = () => { 
     setTexts([...texts, input])
   }
